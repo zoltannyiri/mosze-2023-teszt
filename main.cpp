@@ -4,21 +4,21 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS]; //elírás
-    std::cout << '1-100 ertekek duplazasa' //hibás szintaxis
-    for (int i = 0;) //hibás for ciklus
+    int *b = new int[N_ELEMENTS];
+    std::cout << '1-100 ertekek duplazasa';
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
         b[i] = i * 2;
     }
-    for (int i = 0; i; i++) //hibás for ciklus
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:" //hibás szintaxis (nincs pontosvessző, nincs érték)
+        std::cout << "Ertek: " << b[i];
     }    
     std::cout << "Atlag szamitasa: " << std::endl;
     int atlag;
-    for (int i = 0; i < N_ELEMENTS, i++) //hibás for ciklus
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        atlag += b[i] //hibás szintaxis (nincs pontosvessző)
+        atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
